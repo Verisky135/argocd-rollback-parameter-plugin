@@ -1,0 +1,29 @@
+<!-- this is the page fragment displayed to set up a job -->
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form" xmlns:c="/lib/credentials">
+
+    <f:entry title="${%Name}" field="name">
+        <f:textbox default="ROLLBACK_ID" />
+    </f:entry>
+
+    <f:entry title="${%App Name}" field="appName">
+        <f:textbox default="" />
+    </f:entry>
+
+    <f:entry title="${%Description}" field="description">
+        <f:textarea />
+    </f:entry>
+
+    <f:entry title="${%ArgoCD Base URL}" field="argoCDBaseURL">
+        <f:textbox default="" />
+    </f:entry>
+
+    <f:entry title="${%ArgoCD Credential ID}" field="credentialId">
+        <c:select default="${descriptor.getDefaultCredentialID()}" />
+    </f:entry>
+
+    <f:entry title="${%Ordering}" field="ordering">
+        <f:enum default="${descriptor.getDefaultTagOrdering().name()}">${it}</f:enum>
+    </f:entry>
+
+</j:jelly>
