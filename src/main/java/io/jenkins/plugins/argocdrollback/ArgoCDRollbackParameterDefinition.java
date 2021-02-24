@@ -34,7 +34,6 @@ public class ArgoCDRollbackParameterDefinition extends SimpleParameterDefinition
     private final String appName;
     private final String argoCDBaseURL;
     private final String credentialId;
-    private final String defaultRollbackVersion = "";
     private Ordering ordering;
     private String errorMsg = "";
 
@@ -49,10 +48,6 @@ public class ArgoCDRollbackParameterDefinition extends SimpleParameterDefinition
 
     public String getAppName() {
         return appName;
-    }
-
-    public String getDefaultRollbackVersion() {
-        return defaultRollbackVersion;
     }
 
     public String getArgoCDBaseURL() {
